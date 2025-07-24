@@ -13,18 +13,6 @@
     <% } %> <% if (application.postingLink) { %>
     <a href="<%= application.postingLink %>">View job posting</a>
     <% } %>
-    <p>Application Status: <%= application.status %></p>
-
-    <a href="/users/<%= user._id %>/applications/<%= application._id %>/edit">
-      Edit this application
-    </a>
-
-    <form
-        action="/users/<%= user._id %>/applications/<%= application._id %>?_method=DELETE"
-        method="POST"
-    >
-        <button type="submit">Delete this application</button>
-    </form>
-    
+    <p>Application Status: <%= application.status %></p>    
   </body>
 </html>
