@@ -42,9 +42,11 @@ app.use(passUserToView); //use new passUserToView middleware here
 
 // GET
 app.get("/", async (req, res) => {
-    res.render('index.ejs',{
-        user: req.session.user,
-    })
+  if (req.session.user) {
+    res.redirect(`/users/${req.session.user._id}/applications`)
+  } else {
+    res.render('index.ejs')
+  }
 })
 
 
